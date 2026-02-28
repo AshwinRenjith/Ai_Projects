@@ -1,0 +1,23 @@
+10. Let's create the setup script:
+
+```bash
+#!/bin/bash
+
+# Install dependencies
+echo "Installing dependencies..."
+yarn install
+
+# Set up environment variables
+echo "Setting up environment variables..."
+cp .env.example .env
+
+# Initialize Terraform
+echo "Initializing Terraform..."
+cd terraform && terraform init
+
+# Start Docker services
+echo "Starting Docker services..."
+docker-compose up -d
+
+echo "Setup complete!"
+```
